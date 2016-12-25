@@ -52,6 +52,6 @@ function uploadFile(file,userKey){
         });
 
 
-//because road is gay, we'll export them like this
+//export functions
 exports.uploadFile();
 exports.setKey();
