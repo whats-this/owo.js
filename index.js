@@ -16,10 +16,10 @@ exports.setKey = function(userkey) {
 
 exports.uploadFile = function(file, userkey) {
   return new Promise((resolve, reject) => {
-    if(key != "") {
+    if(key !== "") {
       userkey = key
     } else {
-      if(userkey == undefined){
+      if(userkey === undefined){
         reject('OwO : ERROR : Userkey undefined.');
         return;
       }
@@ -56,7 +56,7 @@ request(options, function (error, response, body) {
 
 exports.shortenURL = function(url, userkey){
   return new Promise((resolve, reject) => {
-    if(key != "") {
+    if(key !== "") {
       userkey = key
     } else {
       if(userkey == undefined){
@@ -65,7 +65,7 @@ exports.shortenURL = function(url, userkey){
       }
     }
 
-    if(url == undefined || url == ""){
+    if(url === undefined || url === ""){
       reject('OwO : ERROR : URL is not specified.');
       return;
     }
