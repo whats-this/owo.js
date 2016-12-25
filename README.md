@@ -22,7 +22,7 @@ owo.uploadFile('file.png')
     .catch(err => console.log(err));
 ```
 
-**File Uploading**
+**URL Shortening**
 ```js
 // Import OwO.JS for use.
 var owo = require('owo.js');
