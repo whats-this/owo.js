@@ -13,10 +13,10 @@
 **Image Uploading**
 
 ```js
-/** Import OwO.JS for use. **/
+// Import OwO.JS for use.
 var owo = require('owo.js');
 
-/** Upload the file to OwO. **/
+// Upload the file to OwO.
 owo.setKey("YOUR-KEY-HERE");
 owo.uploadFile('file.png')
 ```

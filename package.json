@@ -1,7 +1,7 @@
 {
   "name": "owo.js",
-  "version": "1.0.0",
-  "description": "**DISCLAIMER:** I am not experienced in Node, fullstop. This library was my first attempt ever at writing a library for node and as such will reflect that, heavily. Please bare with and feel free to Git Pull if you find anything wrong with the library. Thanks [Jakeoid](https://github.com/jakeoid).",
+  "version": "0.0.2",
+  "description": "OwO.whats-th.is JavaScript API wrapper.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/whats-this/owo.js.git"
   },
-  "author": "Jakeoid",
+  "author": "Whats-Th.is",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/whats-this/owo.js/issues"
