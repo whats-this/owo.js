@@ -4,15 +4,28 @@
 
 # Instructions
 
-**INFO:** This is not working as of Sunday 25th December.
-
 1. Gain a API key in order to be actually able to use the service.
-2. Run the command `npm install owopy`.
+2. Run the command `npm install owo.py`.
 3. Check the usage below to find some basic examples of how to use the script.
 
 # Usage
 
-T.B.A
+**Image Uploading**
+
+```js
+/** Import OwO.JS for use. **/
+var owo = require('owo.js');
+
+/** Upload the file to OwO. **/
+owo.setKey("YOUR-KEY-HERE");
+owo.uploadFile('file.png')
+```
+
+# Todo
+
+- Make URL Shortening happen.
+- Add JSON Parsing.
+- Take over the world.
 
 # Contribute
 

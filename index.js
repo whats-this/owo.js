@@ -22,8 +22,8 @@ exports.uploadFile = function(file, userkey) {
 			}
 		}
 
-		var fs = require("fs");
-		var request = require("request");
+		const fs = require("fs");
+		const request = require("request");
 
 		var options = { method: 'POST',
 			url: 'https://api.awau.moe/upload/pomf',
