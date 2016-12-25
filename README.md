@@ -11,7 +11,6 @@
 # Usage
 
 **Image Uploading**
-
 ```js
 // Import OwO.JS for use.
 var owo = require('owo.js');
@@ -19,11 +18,24 @@ var owo = require('owo.js');
 // Upload the file to OwO.
 owo.setKey("YOUR-KEY-HERE");
 owo.uploadFile('file.png')
+	.then(data => console.log(data))
+    .catch(err => console.log(err));
+```
+
+**URL Shortening**
+```js
+// Import OwO.JS for use.
+var owo = require('owo.js');
+
+// Shorten the url to OwO.
+owo.setKey("YOUR-KEY-HERE");
+owo.shortenURL("YOUR-URL-HERE")
+	.then(data => console.log(data))
+    .catch(err => console.log(err));
 ```
 
 # Todo
 
-- Make URL Shortening happen.
 - Add JSON Parsing.
 - Take over the world.
 

@@ -1,57 +1,89 @@
-//                    _     
-//  ___ _ _ _ ___    |_|___ 
+//                    _
+//  ___ _ _ _ ___    |_|___
 // | . | | | | . |_  | |_ -|
 // |___|_____|___|_|_| |___|
-//                 |___|    
-// 
+//                 |___|
+//
 
-key = '';
+const fs = require("fs");
+const request = require("request");
 
+key = "";
 
-const fs = require('fs');
-const request = require('request');
-
-//this is the option immutable
-let options = { method: 'POST',
-    url: 'https://api.awau.moe/upload/pomf',
-    headers:
-        { authorization: userKey },
-    formData:
-        { 'files[]':
-            { value: 'fs.createReadStream("' + file + '")',
-                options: { filename: file, contentType: null } } } };
-
-function setKey(userKey) {
-    key = userKey
-} else {
-    if (userkey === undefined){
-        console.log('ERROR: no key defined');
-        return;
-    }
+exports.setKey = function(userkey) {
+	key = userkey;
 }
 
-function uploadFile(file,userKey){
-    if(key != '') {
-        userkey = key
-    } else {
-        if(userkey == undefined){
-            console.log('ERROR : Userkey undefined.');
-            return;
-        }
-    }
+exports.uploadFile = function(file, userkey) {
+	return new Promise((resolve, reject) => {
+		if(key != "") {
+			userkey = key
+		} else {
+			if(userkey == undefined){
+				reject('OwO : ERROR : Userkey undefined.');
+				return;
+			}
+		}
+
+		let options = { method: 'POST',
+			url: 'https://api.awau.moe/upload/pomf',
+			headers: {
+				authorization: userkey
+			},
+			formData: { 'files[]':
+				{
+					value: fs.createReadStream(file),
+					options: {
+						filename: file, contentType: null
+					}
+				}
+			}
+		};
+
+		/** BEGIN REQUEST**/
+		request(options, function (error, response, body) {
+			if(error) reject(error)
+			resolve(body);
+			response.on('data', function (chunk) {
+				body += chunk;
+			});
+			response.on('end', function () {
+				/*console.log("BODY LATER"+body);*/
+			});
+		});
+	});
+};
+
+exports.shortenURL = function(url, userkey){
+	return new Promise((resolve, reject) => {
+		if(key != "") {
+			userkey = key
+		} else {
+			if(userkey == undefined){
+				reject('OwO : ERROR : Userkey undefined.');
+				return;
+			}
+		}
+
+		if(url == undefined || url == ""){
+			reject('OwO : ERROR : URL is not specified.');
+			return;
+		}
+
+		let options = {
+			url: "https://api.awau.moe/shorten/polr",
+			headers: {
+				authorization: userkey
+			},
+			qs: {
+				action: "shorten",
+				url: url
+			}
+		}
+
+		request(options, (error, response, body) => {
+			if(error) reject(error);
+			resolve(body);
+		});
+	});
 }
-
-
-    /** BEGIN REQUEST**/
-    request(options, function (error, response, body) {
-        response.on('data', function (chunk) {
-            body += chunk;
-        });
-        res.on('end', function () {
-            console.log(body)
-        });
-
-
-//export functions
-exports.uploadFile();
-exports.setKey();
