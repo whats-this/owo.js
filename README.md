@@ -20,6 +20,7 @@ owo.setKey("YOUR-KEY-HERE");
 owo.uploadFile('file.png')
 	.then(data => console.log(data))
     .catch(err => console.log(err));
+```
 
 **URL Shortening**
 ```js
