@@ -1,6 +1,6 @@
 # owo.js
 
-A wrapper that was written inside of Javascript that allows for you to upload images to the owo.whats-th.is and shorten URLs through uwu.whats-th.is. This package can also be found on the NPM service if you run the command `npm install owo.py`
+A wrapper that was written inside of Javascript that allows for you to upload images to the owo.whats-th.is and shorten URLs through uwu.whats-th.is. This package can also be found on the NPM service if you run the command `npm install owo.js`
 
 # Instructions
 
