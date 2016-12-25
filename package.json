@@ -1,9 +1,6 @@
 {
   "name": "owo.js",
   "version": "0.0.2",
-  "dependencies": {
-    "request": "request/request",
-  },
   "description": "owo.whats-th.is JavaScript API wrapper.",
   "main": "index.js",
   "scripts": {
@@ -18,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/whats-this/owo.js/issues"
   },
-  "homepage": "https://github.com/whats-this/owo.js#readme"
+  "homepage": "https://github.com/whats-this/owo.js#readme",
+  "dependencies": {
+    "request": "^2.79.0"
+  }
 }

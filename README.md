@@ -1,6 +1,6 @@
 # owo.js
 
-A wrapper that was written inside of Javascript that allows for you to upload images to the owo.whats-th.is and shorten URLs through uwu.whats-th.is. This package can also be found on the NPM service if you run the command `npm install owo.py`
+A wrapper that was written inside of Javascript that allows for you to upload images to the owo.whats-th.is and shorten URLs through uwu.whats-th.is. This package can also be found on the NPM service if you run the command `npm install owo.js`
 
 # Instructions
 
@@ -13,10 +13,9 @@ A wrapper that was written inside of Javascript that allows for you to upload im
 **Image Uploading**
 ```js
 // Import OwO.JS for use.
-const owo = require('owo.js');
+const owo = new (require("owo.js"))("YOUR-KEY-HERE");
 
 // Upload the file to OwO.
-owo.setKey("YOUR-KEY-HERE");
 owo.uploadFile('./examples/file.png')
 	.then(data => console.log(data))
     .catch(err => console.log(err));
@@ -25,10 +24,9 @@ owo.uploadFile('./examples/file.png')
 **URL Shortening**
 ```js
 // Import OwO.JS for use.
-const owo = require('owo.js');
+const owo = new (require("owo.js"))("YOUR-KEY-HERE");
 
 // Shorten the url to OwO.
-owo.setKey("YOUR-KEY-HERE");
 owo.shortenURL("http://whats-th.is/")
 	.then(data => console.log(data))
     .catch(err => console.log(err));

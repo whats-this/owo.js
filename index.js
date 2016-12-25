@@ -7,78 +7,77 @@
 const fs = require("fs");
 const request = require("request");
 
-key = "";
+class owo {
+  constructor(key) {
+    this.key = key;
+  }
 
-exports.setKey = function(userkey) {
-  key = userkey;
-}
-
-exports.uploadFile = function(file, userkey) {
-  return new Promise((resolve, reject) => {
-    if(key != "") {
-      userkey = key
-    } else {
-      if(userkey == undefined) {
+  shortenURL(url) {
+    return new Promise((resolve, reject) => {
+      if(this.key == undefined || this.key == "") {
         reject('OwO : ERROR : Userkey undefined.');
         return;
       }
-    }
 
-    let options = {
-      method: 'POST',
-      url: 'https://api.awau.moe/upload/pomf',
-      headers: {
-        authorization: userkey
-      },
-      formData: {
-        'files[]': {
-          value: fs.createReadStream(file),
-          options: {
-            filename: file,
-            contentType: null
-          }
+      if(url == undefined || url == "") {
+        reject('OwO : ERROR : URL is not specified.');
+        return;
+      }
+
+      let options = {
+        url: "https://api.awau.moe/shorten/polr",
+        headers: {
+          authorization: this.key
+        },
+        qs: {
+          action: "shorten",
+          url: url
         }
       }
-    };
 
-    /** BEGIN REQUEST**/
-    request(options, function(error, response, body) {
-      if(error) reject(error)
-      resolve(body);
+      request(options, (error, response, body) => {
+        if(error) reject(error);
+        resolve(body);
+      });
     });
-  });
-};
+  }
 
-exports.shortenURL = function(url, userkey) {
-  return new Promise((resolve, reject) => {
-    if(key != "") {
-      userkey = key
-    } else {
-      if(userkey == undefined) {
+  uploadFile(file) {
+    return new Promise((resolve, reject) => {
+      if(this.key == undefined || this.key == "") {
         reject('OwO : ERROR : Userkey undefined.');
         return;
       }
-    }
 
-    if(url == undefined || url == "") {
-      reject('OwO : ERROR : URL is not specified.');
-      return;
-    }
-
-    let options = {
-      url: "https://api.awau.moe/shorten/polr",
-      headers: {
-        authorization: userkey
-      },
-      qs: {
-        action: "shorten",
-        url: url
+      if(file == undefined || file == "") {
+        reject('OwO : ERROR : File undefined.');
+        return;
       }
-    }
 
-    request(options, (error, response, body) => {
-      if(error) reject(error);
-      resolve(body);
+      let options = {
+        method: 'POST',
+        url: 'https://api.awau.moe/upload/pomf',
+        headers: {
+          authorization: this.key
+        },
+        formData: {
+          'files[]': {
+            value: fs.createReadStream(file),
+            options: {
+              filename: file,
+              contentType: null
+            }
+          }
+        }
+      };
+
+      /** BEGIN REQUEST**/
+      request(options, function(error, response, body) {
+        if(error) reject(error)
+        resolve(body);
+      });
     });
-  });
+  };
 }
+
+module.exports = owo;
