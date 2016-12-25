@@ -5,7 +5,7 @@ A wrapper that was written inside of Javascript that allows for you to upload im
 # Instructions
 
 1. Gain a API key in order to be actually able to use the service.
-2. Run the command `npm install owo.py`
+2. Run the command `npm install owo.js`
 3. Check the usage below to find some basic examples of how to use the script.
 
 # Usage
@@ -13,7 +13,7 @@ A wrapper that was written inside of Javascript that allows for you to upload im
 **Image Uploading**
 ```js
 // Import OwO.JS for use.
-var owo = require('owo.js');
+const owo = require('owo.js');
 
 // Upload the file to OwO.
 owo.setKey("YOUR-KEY-HERE");
@@ -25,7 +25,7 @@ owo.uploadFile('./examples/file.png')
 **URL Shortening**
 ```js
 // Import OwO.JS for use.
-var owo = require('owo.js');
+const owo = require('owo.js');
 
 // Shorten the url to OwO.
 owo.setKey("YOUR-KEY-HERE");
