@@ -29,11 +29,10 @@ var owo = require('owo.js');
 
 // Shorten the url to OwO.
 owo.setKey("YOUR-KEY-HERE");
-owo.shortenURL("YOUR-URL-HERE")
+owo.shortenURL("http://whats-th.is/")
 	.then(data => console.log(data))
     .catch(err => console.log(err));
 ```
-
 
 # Todo
 
