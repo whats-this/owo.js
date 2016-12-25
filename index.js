@@ -5,50 +5,53 @@
 //                 |___|    
 // 
 
-key = "";
+key = '';
 
-exports.setKey = function(userkey) {
-	key = userkey;
+
+const fs = require('fs');
+const request = require('request');
+
+//this is the option immutable
+let options = { method: 'POST',
+    url: 'https://api.awau.moe/upload/pomf',
+    headers:
+        { authorization: userKey },
+    formData:
+        { 'files[]':
+            { value: 'fs.createReadStream("' + file + '")',
+                options: { filename: file, contentType: null } } } };
+
+function setKey(userKey) {
+    key = userKey
+} else {
+    if (userkey === undefined){
+        console.log('ERROR: no key defined');
+        return;
+    }
 }
 
-exports.uploadFile = function(file, userkey) {
-	return new Promise((resolve, reject) => {
-		if(key != "") {
-			userkey = key
-		} else {
-			if(userkey == undefined){
-				reject('OwO : ERROR : Userkey undefined.');
-				return;
-			}
-		}
+function uploadFile(file,userKey){
+    if(key != '') {
+        userkey = key
+    } else {
+        if(userkey == undefined){
+            console.log('ERROR : Userkey undefined.');
+            return;
+        }
+    }
+}
 
-		const fs = require("fs");
-		const request = require("request");
 
-		var options = { method: 'POST',
-			url: 'https://api.awau.moe/upload/pomf',
-			headers: {
-				authorization: userkey
-			},
-			formData: { 'files[]': 
-				{
-					value: fs.createReadStream(file),
-					options: {
-						filename: file, contentType: null
-					}
-				} 
-			}
-		};
+    /** BEGIN REQUEST**/
+    request(options, function (error, response, body) {
+        response.on('data', function (chunk) {
+            body += chunk;
+        });
+        res.on('end', function () {
+            console.log(body)
+        });
 
-		/** BEGIN REQUEST**/
-		request(options, function (error, response, body) {
-			resolve(body);
-			response.on('data', function (chunk) {
-				body += chunk;
-			}); 
-			response.on('end', function () {
-				/*console.log("BODY LATER"+body);*/
-			});
-		});
-	});	
-};
+
+//because road is gay, we'll export them like this
+exports.uploadFile();
+exports.setKey();
