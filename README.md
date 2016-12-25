@@ -1,11 +1,11 @@
 # owo.js
 
-A wrapper that was written inside of Javascript that allows for you to upload images to the owo.whats-th.is and shorten URLs through uwu.whats-th.is. Allows for both methods through Async and Non-Async. Currently only supported inside of Python 3 (3.5+ recommended).
+A wrapper that was written inside of Javascript that allows for you to upload images to the owo.whats-th.is and shorten URLs through uwu.whats-th.is. This package can also be found on the NPM service if you run the command `npm install owo.py`
 
 # Instructions
 
 1. Gain a API key in order to be actually able to use the service.
-2. Run the command `npm install owo.py`.
+2. Run the command `npm install owo.py`
 3. Check the usage below to find some basic examples of how to use the script.
 
 # Usage
