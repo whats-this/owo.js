@@ -1,7 +1,10 @@
 {
   "name": "owo.js",
   "version": "0.0.2",
-  "description": "OwO.whats-th.is JavaScript API wrapper.",
+  "dependencies": {
+    "request": "request/request",
+  },
+  "description": "owo.whats-th.is JavaScript API wrapper.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
