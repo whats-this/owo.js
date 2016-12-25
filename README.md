@@ -1,4 +1,4 @@
-# owo.py
+# owo.js
 
 **DISCLAIMER:** I am not experienced in Node, fullstop. This library was my first attempt ever at writing a library for node and as such will reflect that, heavily. Please bare with and feel free to Git Pull if you find anything wrong with the library. Thanks [Jakeoid](https://github.com/jakeoid).
 
