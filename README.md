@@ -1,6 +1,6 @@
 # owo.js
 
-**DISCLAIMER:** I am not experienced in Node, fullstop. This library was my first attempt ever at writing a library for node and as such will reflect that, heavily. Please bare with and feel free to Git Pull if you find anything wrong with the library. Thanks [Jakeoid](https://github.com/jakeoid).
+A wrapper that was written inside of Javascript that allows for you to upload images to the owo.whats-th.is and shorten URLs through uwu.whats-th.is. Allows for both methods through Async and Non-Async. Currently only supported inside of Python 3 (3.5+ recommended).
 
 # Instructions
 
@@ -20,7 +20,6 @@ owo.setKey("YOUR-KEY-HERE");
 owo.uploadFile('file.png')
 	.then(data => console.log(data))
     .catch(err => console.log(err));
-```
 
 **URL Shortening**
 ```js
@@ -33,6 +32,7 @@ owo.shortenURL("YOUR-URL-HERE")
 	.then(data => console.log(data))
     .catch(err => console.log(err));
 ```
+
 
 # Todo
 
