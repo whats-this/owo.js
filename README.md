@@ -17,7 +17,7 @@ var owo = require('owo.js');
 
 // Upload the file to OwO.
 owo.setKey("YOUR-KEY-HERE");
-owo.uploadFile('file.png')
+owo.uploadFile('./examples/file.png')
 	.then(data => console.log(data))
     .catch(err => console.log(err));
 ```
