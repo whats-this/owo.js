@@ -1,8 +1,11 @@
 {
   "name": "owo.js",
-  "version": "0.0.3",
-  "description": "owo.whats-th.is JavaScript API wrapper.",
+  "version": "0.0.2",
+  "description": "OwO API wrapper for node.js",
   "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,13 +13,24 @@
     "type": "git",
     "url": "git+https://github.com/whats-this/owo.js.git"
   },
-  "author": "Whats-Th.is",
+  "keywords": [
+    "wrapper",
+    "api",
+    "owo",
+    "whats-this"
+  ],
+  "author": "Whats-This",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/whats-this/owo.js/issues"
   },
   "homepage": "https://github.com/whats-this/owo.js#readme",
   "dependencies": {
-    "request": "^2.79.0"
+    "bluebird": "^3.4.7",
+    "superagent": "^3.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-standart": "^0.2.0"
   }
 }
