@@ -13,7 +13,7 @@ class OwOClient {
   upload(path) {
     return new Promise((resolve, reject) => {
       const req = request.post(Endpoints.upload(this.key))
-        .field("files[]", createReadStream(resolve(path)))
+        .field("files[]", createReadStream(path))
         .end((err, res) => {
           if (err) return void reject(new OwOError(err.message, req, res));
           resolve(res.body);
@@ -23,7 +23,7 @@ class OwOClient {
 
   shorten(url) {
     return new Promise((resolve, reject) => {
-      const req = requesr.get(Endpoints.shorten(this.key, url))
+      const req = request.get(Endpoints.shorten(this.key, url))
         .end((err, res) => {
           if (err) return void reject(new OwOError(err.message, req, res));
           resolve(res.text);
