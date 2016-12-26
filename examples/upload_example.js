@@ -9,4 +9,6 @@
 const owo = new (require("owo.js"))("YOUR-KEY-HERE");
 
 // Upload the file to OwO.
-owo.upload('icon.png').then(data => console.log(data)).catch(err => console.log(err));
+owo.upload('icon.png')
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
