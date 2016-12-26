@@ -16,7 +16,7 @@ A wrapper that was written inside of Javascript that allows for you to upload im
 const owo = new (require("owo.js"))("YOUR-KEY-HERE");
 
 // Upload the file to OwO.
-owo.uploadFile('./examples/file.png')
+owo.upload('./examples/file.png')
 	.then(data => console.log(data))
     .catch(err => console.log(err));
 ```
@@ -27,7 +27,7 @@ owo.uploadFile('./examples/file.png')
 const owo = new (require("owo.js"))("YOUR-KEY-HERE");
 
 // Shorten the url to OwO.
-owo.shortenURL("http://whats-th.is/")
+owo.shorten("http://whats-th.is/")
 	.then(data => console.log(data))
     .catch(err => console.log(err));
 ```
