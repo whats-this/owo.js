@@ -6,7 +6,7 @@
 //
 
 // Import OwO.JS for use.
-const owo = new (require("../index.js"))("YOUR-KEY-HERE");
+const owo = new (require("owo.js"))("YOUR-KEY-HERE");
 
 // Tell the url to shorten to OwO.
 owo.shorten('https://whats-th.is/').then(data => console.log(data)).catch(err => console.log(err));

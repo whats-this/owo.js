@@ -6,7 +6,7 @@
 //
 
 // Import OwO.JS for use.
-const owo = new (require("../index.js"))("YOUR-KEY-HERE");
+const owo = new (require("owo.js"))("YOUR-KEY-HERE");
 
 // Upload the file to OwO.
 owo.upload('icon.png').then(data => console.log(data)).catch(err => console.log(err));
