@@ -16,8 +16,6 @@ A wrapper that was written inside of Javascript that allows for you to upload im
 const owo = new (require("owo.js"))("YOUR-KEY-HERE");
 
 // Upload the file to OwO.
-owo.setKey("YOUR-KEY-HERE");
-owo.uploadFile('./examples/icon.png')
 owo.upload('./examples/file.png')
 	.then(data => console.log(data))
     .catch(err => console.log(err));
