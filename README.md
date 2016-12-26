@@ -13,11 +13,12 @@ A wrapper that was written inside of Javascript that allows for you to upload im
 **Image Uploading**
 ```js
 // Import OwO.JS for use.
-const owo = require('owo.js');
+const owo = new (require("owo.js"))("YOUR-KEY-HERE");
 
 // Upload the file to OwO.
 owo.setKey("YOUR-KEY-HERE");
 owo.uploadFile('./examples/icon.png')
+owo.upload('./examples/file.png')
 	.then(data => console.log(data))
     .catch(err => console.log(err));
 ```
@@ -25,11 +26,10 @@ owo.uploadFile('./examples/icon.png')
 **URL Shortening**
 ```js
 // Import OwO.JS for use.
-const owo = require('owo.js');
+const owo = new (require("owo.js"))("YOUR-KEY-HERE");
 
 // Shorten the url to OwO.
-owo.setKey("YOUR-KEY-HERE");
-owo.shortenURL("http://whats-th.is/")
+owo.shorten("http://whats-th.is/")
 	.then(data => console.log(data))
     .catch(err => console.log(err));
 ```
