@@ -1,7 +1,7 @@
 {
   "name": "owo.js",
-  "version": "0.0.2",
-  "description": "OwO API wrapper for node.js",
+  "version": "0.0.3",
+  "description": "owo.whats-th.is JavaScript API wrapper.",
   "main": "index.js",
   "directories": {
     "example": "examples"
