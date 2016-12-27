@@ -87,14 +87,7 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
-# IntelliJ Idea files
 
-.iml
-.idea
-misc.xml
-vcs.xml
-watcherTasks.xml
-modules.xml
 
 
 # End of https://www.gitignore.io/api/linux,windows,node
