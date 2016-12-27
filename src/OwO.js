@@ -1,4 +1,4 @@
-const { resolve } = require("path");
+
 const { createReadStream } = require("fs");
 const Endpoints = require("./Endpoints");
 const OwOError = require("./OwOError");
