@@ -11,9 +11,13 @@ class OwOClient {
   }
 
   upload(path) {
+	let files = (path instanceof Array) ? path : new Array(path)
+	for(let index in files){
+		files[index] = createReadStream(files[index]);
+	}
     return new Promise((resolve, reject) => {
       const req = request.post(Endpoints.upload(this.key))
-        .field("files[]", createReadStream(path))
+        .field("files[]", files)
         .end((err, res) => {
           if (err) return void reject(new OwOError(err.message, req, res));
           resolve(res.body);
