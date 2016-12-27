@@ -1,16 +1,15 @@
-/*
-  *  Jasmine Test File - Upload
-  *
-  *  Tests upload capability of library
-  *
- */
+//  *  Jasmine Test File - Upload
+//  *
+//  *  Tests upload capability of library
+//  *
 const path = require('path');
-const owo = new (require("src/OwO.js"))("YOUR-KEY-HERE");
+const posixdir = path.basename('home/**/*/owo.js');
+const owo = new (require(`${posixdir}/src/OwO.js`))("YOUR-KEY-HERE");
 const Promise = require('bluebird');
-const posixdir = path.basename('**/owo.js');
 
 describe('upload_test', () => {
     it('upload', () => {
+
         return new Promise((resolve,reject) => {
             owo.upload(`${posixdir}/examples/icon.png`, (err,res) => {
                 if(err){
