@@ -2,9 +2,10 @@
 //  *
 //  *  Tests upload capability of library
 //  *
-const path = require('path');
-const posixdir = path.basename('home/**/*/owo.js');
-const owo = new (require(`${posixdir}/src/OwO.js`))("YOUR-KEY-HERE");
+
+global.__baseDir = __dirname;
+
+const owo = new (require(`${__baseDir}/src/OwO.js`))("YOUR-KEY-HERE");
 const Promise = require('bluebird');
 
 describe('upload_test', () => {
