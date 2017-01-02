@@ -3,9 +3,7 @@
 //  *  Tests upload capability of library
 //  *
 
-global.__baseDir = __dirname;
-
-const owo = new (require(`${__baseDir}/src/OwO.js`))("YOUR-KEY-HERE");
+const owo = new (require(require("path").resolve("../src/OwO.js")))("YOUR-KEY-HERE");
 const Promise = require('bluebird');
 
 describe('upload_test', () => {
