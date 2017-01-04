@@ -4,7 +4,7 @@
 
 const owo = new (require(require('path').resolve('../src/OwO.js')));
 
-describe('Shorten_test', () => {
+describe('shorten_test', () => {
     it('upload', () => {
         //I hadn't came up with a link to shorten but soon
         owo.shorten('', (err, res) => {
