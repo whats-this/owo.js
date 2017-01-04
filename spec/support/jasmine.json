@@ -1,7 +1,8 @@
 {
   "spec_dir": "spec",
   "spec_files": [
-    "uploadTest.js"
+    "uploadTest.js",
+    "shortenTest.js"
   ],
   "helpers": [
     "helpers/**/*.js"
