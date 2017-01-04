@@ -7,17 +7,15 @@ const Promise = require('bluebird');
 
 describe('shorten_test', () => {
     it('shorten', () => {
-        return new Promise((resolve, reject) => {
-            //shorten linku owo
-            owo.shorten('https://osu.ppy.sh'), (err, data) => {
-                if (err) {
-                    return console.log(err);
-                } else if (data) {
-                    return console.log(data);
-                }
-            }
-            expect(data).toBe('string');
-            expect(err).toBe(null);
-        }).then(() => resolve()).catch(err => ([err]));
+        //let's try to shorten osu.ppy.sh using this
+        owo.shorten('https://osu.ppy.sh')
+            .then(data => {
+                console.log(data)
+                expect(data).toBe('string');
+            })
+            .catch(err => {
+                ([err])
+                expect(err).toBe(undefined);
+            });
     })
 })

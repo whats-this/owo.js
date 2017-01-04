@@ -9,18 +9,12 @@ const Promise = require('bluebird');
 describe('upload_test', () => {
     it('upload', () => {
 
-        return new Promise((resolve, reject) => {
-            //find the File
-            owo.upload(require('path').resolve("../owo.js/examples/icon.png"), (err, res) => {
-                if (err) {
-                    return console.log(err);
-                } else if (res === 300) {
-                    return console.log(res);
-                }
-            }).then(() => resolve()).catch(err => ([err]));
-            //conditionals
-            expect(res).toBe(300);
-            expect(err).toBe(null);
-        });
+        // Upload the file to OwO.
+        owo.upload(require('path').resolve('../owo.js/examples/file.png'))
+            .then(data => console.log(data))
+            .catch(err => {
+                ([err])
+                expect(err).toBe(undefined);
+            });
     });
 });
