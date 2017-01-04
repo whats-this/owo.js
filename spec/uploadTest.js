@@ -3,7 +3,7 @@
 //  *  Tests upload capability of library
 //  *
 
-const owo = new (require(require('path').resolve('../owo.js/src/owo.js')))('YOUR-KEY-HERE');
+const owo = new (require(require('path').resolve('../owo.js/src/owo.js')))('FAKE-TOKEN');
 const Promise = require('bluebird');
 
 describe('upload_test', () => {
@@ -20,7 +20,7 @@ describe('upload_test', () => {
             }).then(() => resolve()).catch(err => ([err]));
             //conditionals
             expect(res).toBe(300);
-            expect(err).toBe(false);
+            expect(err).toBe(null);
         });
     });
 });

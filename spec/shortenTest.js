@@ -2,19 +2,22 @@
 // * 
 // * tests the URL Shorten function.
 
-const owo = new (require(require('path').resolve('../owo.js/src/owo.js')));
+const owo = new (require(require('path').resolve('../owo.js/src/owo.js')))('FAKE-TOKEN');
+const Promise = require('bluebird');
 
 describe('shorten_test', () => {
-    it('upload', () => {
-        //I hadn't came up with a link to shorten but soon
-        owo.shorten('', (err, res) => {
-            if (err) {
-                return console.log(err);
-            } if (res) {
-                return console.log(res);
+    it('shorten', () => {
+        return new Promise((resolve, reject) => {
+            //shorten linku owo
+            owo.shorten('https://osu.ppy.sh'), (err, data) => {
+                if (err) {
+                    return console.log(err);
+                } else if (data) {
+                    return console.log(data);
+                }
             }
-        });
-        expect(res).toBe('string');
-        expect(err).toBe(0);
+            expect(data).toBe('string');
+            expect(err).toBe(null);
+        }).then(() => resolve()).catch(err => ([err]));
     })
-});
+})
