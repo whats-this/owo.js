@@ -36,4 +36,4 @@ class owoClient {
   }
 }
 
-module.exports = OwOClient;
+module.exports = owoClient;
