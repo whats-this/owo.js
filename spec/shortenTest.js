@@ -6,6 +6,16 @@ const owo = new (require(require('path').resolve('../src/OwO.js')));
 
 describe('Shorten_test', () => {
     it('upload', () => {
-        //Code coming soon(TM)
+        //I hadn't came up with a link to shorten but soon
+        owo.shorten('', (err, res) => {
+            if (err) {
+                return false;
+            } if (res) {
+                return res;
+                return true;
+            }
+        });
+        expect(true).toBe('pass');
+        expect(false).toBe('fail');
     })
 });
