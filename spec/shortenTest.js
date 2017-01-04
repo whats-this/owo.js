@@ -2,7 +2,7 @@
 // * 
 // * tests the URL Shorten function.
 
-const owo = new (require(require('path').resolve('../src/OwO.js')));
+const owo = new (require(require('path').resolve('../src/owo.js')));
 
 describe('shorten_test', () => {
     it('upload', () => {

@@ -3,7 +3,7 @@
 //  *  Tests upload capability of library
 //  *
 
-const owo = new (require(require('path').resolve('../src/OwO.js')))('YOUR-KEY-HERE');
+const owo = new (require(require('path').resolve('../src/owo.js')))('YOUR-KEY-HERE');
 const Promise = require('bluebird');
 
 describe('upload_test', () => {

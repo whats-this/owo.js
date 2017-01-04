@@ -1,4 +1,4 @@
-class OwOError extends Error {
+class owoError extends Error {
   constructor(message, request, response) {
     super(message);
 
@@ -7,4 +7,4 @@ class OwOError extends Error {
   }
 }
 
-module.exports = OwOError;
+module.exports = owoError;
