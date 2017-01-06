@@ -2,8 +2,10 @@
 //  *
 //  *  Tests upload capability of library
 //  *
+//  *
+//  * This cannot be run inside a Node Session, use Jasmine for this tests. 
 
-const owo = new (require(require('path').resolve('../owo.js/src/owo.js')))('FAKE-TOKEN');
+const owo = new(require(require('path').resolve('../owo.js/src/owo.js')))('FAKE-TOKEN');
 const Promise = require('bluebird');
 
 describe('upload_test', () => {
