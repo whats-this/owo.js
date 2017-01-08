@@ -4,7 +4,7 @@
 // *
 // * This cannot be run inside a Node Session, use Jasmine for this tests. 
 
-const owo = new(require(require('path').resolve('../owo.js/src/owo.js')))('FAKE-TOKEN');
+const owo = new (require(require('path').resolve('../owo.js/src/owo.js')))('FAKE-TOKEN');
 const Promise = require('bluebird');
 
 describe('shorten_test', () => {
@@ -12,7 +12,7 @@ describe('shorten_test', () => {
         //let's try to shorten osu.ppy.sh using this
         owo.shorten('https://osu.ppy.sh')
             .then(data => {
-                console.log(data)
+                console.log(data);
                 expect(data).toBe('string');
             })
             .catch(err => {
