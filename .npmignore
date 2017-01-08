@@ -17,3 +17,7 @@ spec
 #VS Code files
 
 .vscode
+
+# Travis CI files
+
+.travis.yml
