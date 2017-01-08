@@ -1,7 +1,7 @@
 
 const { createReadStream } = require("fs");
 const Endpoints = require("./Endpoints");
-const OwOError = require("./owoError");
+const owoError = require("./owoError");
 const request = require("superagent");
 const Promise = require("bluebird");
 
