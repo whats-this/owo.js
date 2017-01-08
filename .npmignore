@@ -1,5 +1,19 @@
+# Mac Stuff
+
 .DS_Store
+
+# GitHub's README
+
 README.md
+
+# IntelliJ idea files
+
 .idea
+
+# Jasmine specs
+
 spec
+
+#VS Code files
+
 .vscode
