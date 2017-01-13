@@ -1,4 +1,4 @@
-# owo.js
+# owo.js [![Build Status](https://travis-ci.org/whats-this/owo.js.svg?branch=master)](https://travis-ci.org/whats-this/owo.js)
 
 A wrapper that was written inside of Javascript that allows for you to upload images to the owo.whats-th.is and shorten URLs through uwu.whats-th.is. This package can also be found on the NPM service if you run the command `npm install owo.js`
 
