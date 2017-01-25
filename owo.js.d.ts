@@ -8,7 +8,7 @@ export module owo.js {
              key : 'string'
          }
         export interface upload {
-            files : ['Buffer'],
+            files : ['path'],
         }
         export interface shorten {
              url : 'string'
