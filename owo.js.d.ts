@@ -12,7 +12,7 @@ declare module owo.js {
     };
     
    export function upload (file) {
-        file : ['Buffer']
+        file : 'Buffer'
    };
    
    export function shorten (url) {
