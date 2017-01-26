@@ -2,7 +2,6 @@
 // *
 // * Contributed by Capuccino
 
-import 'bluebird' as 'Promise' from 'bluebird';
 
 declare module owo.js {
     export interface Client {
@@ -14,5 +13,5 @@ declare module owo.js {
    };
    export function shorten (url) {
        url : 'string'
-   }
+   };
     
