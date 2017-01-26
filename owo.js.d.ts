@@ -4,8 +4,11 @@
 
 
 declare module owo.js {
-    export interface Client {
-        key : key
+    
+    export class Client (){
+        constructor (key) {
+            this.key = key
+        }
     };
     
     export function upload (file) {
