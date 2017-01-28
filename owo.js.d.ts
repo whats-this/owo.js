@@ -2,20 +2,16 @@
 // *
 // * Contributed by Capuccino
 
-
-declare module owo.js {
-    
-    export class Client (){
-        constructor (key) {
-            this.key = key
+export module owo.js {
+    export interface Client {
+        key: 'key'
+    }
+    namespace Client {
+        export interface upload {
+            files: 'path'
         }
-    };
-    
-   export function upload (file) {
-        file : 'Buffer'
-   };
-   
-   export function shorten (url) {
-       url : 'string'
-   };
-    
+        export interface shorten {
+            url: 'string'
+        }
+    }
+}
