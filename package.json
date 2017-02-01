@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "eslint": "^3.12.2",
-    "eslint-config-standart": "^0.2.0"
+    "eslint-config-standart": "^0.2.0",
+    "typescript": "^2.1.5"
   }
 }

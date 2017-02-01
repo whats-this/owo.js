@@ -3,15 +3,15 @@
 // * Contributed by Capuccino
 
 export module owo.js {
-     namespace Client {
-         export interface Client {
-             key : 'string'
-         }
+    export interface Client {
+        key: 'key'
+    }
+    namespace Client {
         export interface upload {
-            files : ['path'],
+            files: 'path'
         }
         export interface shorten {
-             url : 'string'
+            url: 'string'
         }
     }
 }
