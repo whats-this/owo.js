@@ -1,4 +1,4 @@
-const HOST = 'https://api.awau.moe';
+const HOST = exports.HOST = 'https://api.awau.moe';
 
 module.exports = {
   shorten: (key, url) => `${HOST}/shorten/polr?action=shorten&url=${url}&key=${key}`,

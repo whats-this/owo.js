@@ -1,39 +1,28 @@
 
-const { createReadStream } = require("fs");
-const Endpoints = require("./Endpoints");
-const owoError = require("./owoError");
-const request = require("superagent");
-const Promise = require("bluebird");
+const { createReadStream } = require('fs');
+const Endpoints = require('./Endpoints');
+const request = require('superagent');
+const OwOError = require('./owoError');
 
-class owoClient {
-  constructor(key) {
+class OwOClient {
+  constructor (key) {
     this.key = key;
   }
 
-  upload(path) {
-    let files = (path instanceof Array) ? path : new Array(path)
-    for (let index in files) {
-      files[index] = createReadStream(files[index]);
-    }
-    return new Promise((resolve, reject) => {
-      const req = request.post(Endpoints.upload(this.key))
-        .field("files[]", files)
-        .end((err, res) => {
-          if (err) return void reject(new owoError(err.message, req, res));
-          resolve(res.body);
-        });
-    });
+  upload (path) {
+    let files = (path instanceof Array) ? path : new Array(path);
+    for (let index in files) files[index] = createReadStream(files[index]);
+    return request.post(Endpoints.upload(this.key))
+      .field('files[]', files)
+      .then((res) => res.body)
+      .catch((err) => new OwOError(err.message, err.response.req, err.response));
   }
 
-  shorten(url) {
-    return new Promise((resolve, reject) => {
-      const req = request.get(Endpoints.shorten(this.key, url))
-        .end((err, res) => {
-          if (err) return void reject(new owoError(err.message, req, res));
-          resolve(res.text);
-        });
-    });
+  shorten (url) {
+    return request.get(Endpoints.shorten(this.key, url))
+      .then((res) => res.text)
+      .catch((err) => new OwOError(err.message, err.response.req, err.response));
   }
 }
 
-module.exports = owoClient;
+module.exports = OwOClient;
