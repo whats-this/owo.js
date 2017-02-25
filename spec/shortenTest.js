@@ -15,7 +15,7 @@ describe('shorten_test', () => {
               expect(data).toBe('string');
             })
             .catch(err => {
-              ([err]);
+              reject(err);
               expect(err).toBe(undefined);
             });
   });
