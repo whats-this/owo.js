@@ -1,3 +1,9 @@
+/* 
+* owo.js  
+* 
+* Copyright (c) 2017 by the whats-th.is Development Team. Licensed under MIT
+*/
+
 const { createReadStream } = require('fs');
 const Endpoints = require('./Endpoints');
 const request = require('superagent');

@@ -1,3 +1,9 @@
+/* 
+* owo.js  
+* 
+* Copyright (c) 2017 by the whats-th.is Development Team. Licensed under MIT
+*/
+
 class OwOError extends Error {
   constructor (message, request, response) {
     super(message);
