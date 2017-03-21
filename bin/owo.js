@@ -5,7 +5,7 @@ const snekparse = require('snekparse');
 const fs = require('fs');
 const { LocalStorage } = require('node-localstorage');
 
-(async function main() {
+(function main() {
   const argv = snekparse(process.argv.slice(2));
   if (argv.help || argv.h) return help();
   if (argv.init) return init();
@@ -18,16 +18,20 @@ const { LocalStorage } = require('node-localstorage');
   if (command === 'init') return init();
   switch (command) {
     case 'shorten': {
-      const code = await owo.shorten(args[0]);
-      const url = buildOwOURL(ls.getItem('shorten'), code);
-      process.stdout.write(url);
+      owo.shorten(args[0])
+      .then(code => {
+        const url = buildOwOURL(ls.getItem('shorten'), code);
+        process.stdout.write(url);
+      });
       break;
     }
     case 'upload': {
-      const response = await owo.upload(args[0]);
-      const path = response.files[0].url;
-      const url = buildOwOURL(ls.getItem('upload'), path);
-      process.stdout.write(url);
+      owo.upload(args[0])
+      .then(response => {
+        const path = response.files[0].url;
+        const url = buildOwOURL(ls.getItem('upload'), path);
+        process.stdout.write(url);
+      });
       break;
     }
     default:
@@ -35,7 +39,7 @@ const { LocalStorage } = require('node-localstorage');
   }
 }());
 
-async function init() {
+function init() {
   function q(question) {
     return new Promise((resolve, reject) => {
       prompt.get(question, (err, res) => {
@@ -49,15 +53,16 @@ async function init() {
   prompt.message = '\u001b[32mOwO CLI\u001b[39m';
 
   const ls = getLS();
-
-  const key = await q('OwO API Key');
-  const short = await q('Shortening Domain');
-  const file = await q('File uploading domain');
-  ls.setItem('key', key);
-  ls.setItem('shorten', short);
-  ls.setItem('upload', file);
-  console.log('Success!');
-  prompt.stop();
+  
+  q('OwO API Key').then(key => ls.setItem('key', key))
+    .then(() => q('Shortening Domain'))
+    .then(short => ls.setItem('shorten', short))
+    .then(() => q('File uploading domain'))
+    .then(file => ls.setItem('upload', file))
+    .then(() => {;
+      console.log('Success!');
+      prompt.stop();
+    });
 }
 
 function help() {
