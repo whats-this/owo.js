@@ -19,6 +19,9 @@
     "owo",
     "whats-this"
   ],
+  "bin": {
+    "owo": "bin/owo.js"
+  },
   "author": "Whats-This",
   "license": "MIT",
   "bugs": {
@@ -26,6 +29,8 @@
   },
   "homepage": "https://github.com/whats-this/owo.js#readme",
   "dependencies": {
+    "node-localstorage": "^1.3.0",
+    "snekparse": "github:guscaplan/snekparse",
     "superagent": "^3.3.1"
   },
   "devDependencies": {

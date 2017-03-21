@@ -1,6 +1,6 @@
-/* 
-* owo.js  
-* 
+/*
+* owo.js
+*
 * Copyright (c) 2017 by the whats-th.is Development Team. Licensed under MIT
 */
 
@@ -8,6 +8,7 @@ const { createReadStream } = require('fs');
 const Endpoints = require('./Endpoints');
 const request = require('superagent');
 const OwOError = require('./owoError');
+const URL = require('url');
 
 /**
   * OwO Client
@@ -39,8 +40,8 @@ class OwOClient {
     */
   shorten (url) {
     return request.get(Endpoints.shorten(this.key, url))
-      .then((res) => res.text)
-      .catch((err) => new OwOError(err.message, err.response.req, err.response));
+      .then(res => URL.parse(res.text).path.slice(1))
+      .catch(err => new OwOError(err.message, err.response.req, err.response));
   }
 }
 
