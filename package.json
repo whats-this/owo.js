@@ -1,6 +1,6 @@
 {
   "name": "owo.js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "owo.whats-th.is JavaScript API wrapper.",
   "main": "index.js",
   "directories": {
