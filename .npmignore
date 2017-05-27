@@ -21,3 +21,7 @@ spec
 # Travis CI files
 
 .travis.yml
+
+#example files
+
+examples
