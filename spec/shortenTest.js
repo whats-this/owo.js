@@ -8,13 +8,14 @@ const owo = new (require(require('path').resolve('../owo.js/index.js')))('FAKE-T
 
 describe('shorten_test', () => {
   it('shorten', () => {
-        // let's try to shorten osu.ppy.sh using this
-    owo.shorten('https://osu.ppy.sh')
+        // shorten owo's homepage as a test
+    owo.shorten('https://owo.whats-th.is')
             .then(data => {
               console.log(data);
               expect(data).toBe('string');
             })
             .catch(err => {
+                // should expect error to be not there.
               reject(err);
               expect(err).toBe(undefined);
             });
