@@ -10,7 +10,7 @@ const owo = new (require(require('path').resolve('../owo.js/index.js')))('FAKE-T
 describe('upload_test', () => {
   it('upload', () => {
         // Upload the file to OwO.
-    owo.upload(require('path').resolve('../owo.js/examples/file.png'))
+    owo.upload(require('path').resolve('../owo.js/examples/icon.png'))
             .then(data => {
               console.log(data);
               expect(data).toBe('string');

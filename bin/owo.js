@@ -5,7 +5,7 @@ const snekparse = require('snekparse');
 const fs = require('fs');
 const { LocalStorage } = require('node-localstorage');
 
-(function main() {
+( function main() {
   const argv = snekparse(process.argv.slice(2));
   if (argv.help || argv.h) return help();
   if (argv.init) return init();
