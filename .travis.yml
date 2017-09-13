@@ -1,8 +1,8 @@
 dist: xenial
 language: node_js
 node_js:
-  - "6.9"
-  - "7.1"
+  - "6.11.2"
+  - "8.4"
 install:
 
 - npm i --save
