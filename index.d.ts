@@ -3,7 +3,7 @@
 // * Contributed by Capuccino & noud02
 
 export module "owo.js" {
-    export interface IUploadResponse {
+    export interface IUploadResponseFile {
         hash: string;
         name: string;
         url: string;
@@ -12,7 +12,10 @@ export module "owo.js" {
 
     export class Client {
         public constructor (key: string);
-        public upload (path: string): Promise<IUploadResponse>;
+        public upload (path: string): Promise<{
+            files: IUploadResponseFile[];
+            success: boolean;
+        }>;
         public shorten (url: string): Promise<string>;
     }
 }
