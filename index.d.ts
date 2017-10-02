@@ -1,17 +1,11 @@
 // * Typings for owo.js
 // *
-// * Contributed by Capuccino
+// * Contributed by Capuccino & noud02
 
-export module owo.js {
-    export interface Client {
-        key: 'key'
-    }
-    namespace Client {
-        export interface upload {
-            files: 'path'
-        }
-        export interface shorten {
-            url: 'string'
-        }
+export module "owo.js" {
+    export class Client {
+        public constructor (key: string);
+        public upload (path: string): Promise<any>;
+        public shorten (url: string): Promise<any>;
     }
 }
