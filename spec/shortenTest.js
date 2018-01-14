@@ -4,7 +4,8 @@
 // *
 // * This cannot be run inside a Node Session, use Jasmine for this tests.
 
-const owo = new (require(require('path').resolve('../owo.js/index.js')))('FAKE-TOKEN');
+const config = require('./config');
+const owo = new (require(require('path').resolve('../owo.js/index.js')))(config.token);
 
 describe('shorten_test', () => {
   it('shorten', () => {
