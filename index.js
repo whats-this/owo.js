@@ -5,6 +5,6 @@
 */
 
 
-module.exports = require('./src/owo');
-module.exports.OwOError = require('./src/owoError');
-module.exports.Endpoints = require('./src/Endpoints');
+module.exports = require('./lib/owo');
+module.exports.OwOError = require('./lib/owoError');
+module.exports.Endpoints = require('./lib/Endpoints');
