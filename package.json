@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/whats-this/owo.js#readme",
   "dependencies": {
+    "form-data": "^2.3.2",
     "node-localstorage": "^1.3.0",
     "prompt": "^1.0.0",
     "snekparse": "github:guscaplan/snekparse",
